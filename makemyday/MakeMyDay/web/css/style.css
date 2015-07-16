@@ -1,0 +1,27 @@
+/* 
+    Document   : style
+    Created on : Jun 30, 2012, 1:27:45 PM
+    Author     : bhsridha
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.thumbnail {
+  border: 1px solid #0C2170;
+}
+.thumbnail .caption {
+  background-color: #6AB200;
+}
+.thumbnails {
+  margin-left: 20px;
+}
+
+
+category {
+    color: #0C2170;
+    font-weight: bold;
+}
+
+a.thumbnail {
+   color: #0C2170; 
+}

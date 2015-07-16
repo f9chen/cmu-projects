@@ -1,0 +1,168 @@
+PLAIN
+K 21
+MakeMyDayCatagoryImgs
+V 21
+dir 3-8.0.r21/1346757
+K 30
+glyphicons-halflings-white.png
+V 22
+file 50-2.0.r2/3600610
+K 24
+glyphicons-halflings.png
+V 22
+file 53-2.0.r2/3600953
+K 12
+mmd_logo.jpg
+V 22
+file 55-2.0.r2/3601292
+END
+ENDREP
+id: 4z-2.0.r27/239
+type: dir
+pred: 4z-2.0.r21/1348174
+count: 4
+text: 27 0 226 226 50086f5cb465489746cf609c3dfdd905
+cpath: /MakeMyDay/web/img
+copyroot: 0 /
+
+PLAIN
+K 7
+WEB-INF
+V 21
+dir 4j-2.0.r2/3598932
+K 3
+css
+V 19
+dir 4n-2.0.r26/7351
+K 18
+development-bundle
+V 22
+dir 2-25.0.r25/1039796
+K 3
+img
+V 18
+dir 4z-2.0.r27/239
+K 9
+index.jsp
+V 19
+file 4g-2.0.r24/610
+K 2
+js
+V 18
+dir 57-2.0.r20/952
+END
+ENDREP
+id: 4f-2.0.r27/638
+type: dir
+pred: 4f-2.0.r26/7755
+count: 25
+text: 27 395 230 230 86e40926f7b282e6591c0b168fc2f20e
+cpath: /MakeMyDay/web
+copyroot: 0 /
+
+PLAIN
+K 5
+build
+V 17
+dir 2-2.0.r4/1336
+K 9
+build.xml
+V 22
+file 5d-2.0.r2/3602877
+K 26
+commons-io-2.4-javadoc.jar
+V 22
+file 33-2.0.r2/3592315
+K 26
+commons-io-2.4-sources.jar
+V 22
+file 4d-2.0.r2/3598209
+K 31
+commons-io-2.4-test-sources.jar
+V 22
+file 47-2.0.r2/3597209
+K 24
+commons-io-2.4-tests.jar
+V 22
+file 49-2.0.r2/3597549
+K 18
+commons-io-2.4.jar
+V 22
+file 4b-2.0.r2/3597882
+K 22
+json-lib-2.4-jdk15.jar
+V 22
+file 35-2.0.r2/3592650
+K 9
+nbproject
+V 18
+dir 37-2.0.r4/2296
+K 3
+src
+V 21
+dir 3p-2.0.r2/3597010
+K 3
+web
+V 18
+dir 4f-2.0.r27/638
+END
+ENDREP
+id: 0-2.0.r27/1338
+type: dir
+pred: 0-2.0.r26/8461
+count: 25
+text: 27 790 535 535 0d56f49fd26aa32332a62e2f65152268
+cpath: /MakeMyDay
+copyroot: 0 /
+
+PLAIN
+K 9
+MakeMyDay
+V 18
+dir 0-2.0.r27/1338
+K 4
+test
+V 16
+dir 0-1.0.r1/237
+END
+ENDREP
+id: 0.0.r27/1571
+type: dir
+pred: 0.0.r26/8698
+count: 27
+text: 27 1485 73 73 f46ce6cfba53ee25f0875c737dfc75bf
+cpath: /
+copyroot: 0 /
+
+6-13.0.r13/29914 delete-file false false /MakeMyDay/web/img/ui-bg_diagonals-small_50_ff3853_40x40.png
+
+b-13.0.r13/30262 delete-file false false /MakeMyDay/web/img/ui-bg_flat_75_ffffff_40x100.png
+
+i-13.0.r13/28205 delete-file false false /MakeMyDay/web/img/ui-icons_ffffff_256x240.png
+
+a-13.0.r13/30601 delete-file false false /MakeMyDay/web/img/ui-bg_flat_75_ba9217_40x100.png
+
+d-13.0.r13/28543 delete-file false false /MakeMyDay/web/img/ui-icons_454545_256x240.png
+
+c-13.0.r13/29568 delete-file false false /MakeMyDay/web/img/ui-bg_white-lines_85_f7f7ba_40x100.png
+
+f-13.0.r13/30939 delete-file false false /MakeMyDay/web/img/ui-icons_c02669_256x240.png
+
+7-13.0.r13/31614 delete-file false false /MakeMyDay/web/img/ui-bg_diagonals-small_75_ccd232_40x40.png
+
+e-13.0.r13/31277 delete-file false false /MakeMyDay/web/img/ui-icons_88a206_256x240.png
+
+5-13.0.r13/31962 delete-file false false /MakeMyDay/web/img/ui-bg_diagonals-small_50_93c3cd_40x40.png
+
+g-13.0.r13/32310 delete-file false false /MakeMyDay/web/img/ui-icons_e1e463_256x240.png
+
+3-13.0.r13/28880 delete-file false false /MakeMyDay/web/img/ui-bg_diagonals-small_40_db4865_40x40.png
+
+8-13.0.r13/29226 delete-file false false /MakeMyDay/web/img/ui-bg_dots-medium_80_ffff38_4x4.png
+
+h-13.0.r13/27867 delete-file false false /MakeMyDay/web/img/ui-icons_ffeb33_256x240.png
+
+9-13.0.r13/32648 delete-file false false /MakeMyDay/web/img/ui-bg_dots-small_35_35414f_2x2.png
+
+
+1571 1704
