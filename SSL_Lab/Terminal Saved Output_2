@@ -1,0 +1,48 @@
+Last login: Wed May  2 13:53:52 on ttys000
+host-128-237-205-61:~ Cherry$ cd clientSide
+host-128-237-205-61:clientSide Cherry$ javac *.java
+host-128-237-205-61:clientSide Cherry$ ls
+Client.class	Client.java	mjm.cer		mjm.truststore
+host-128-237-205-61:clientSide Cherry$ java Client
+Hello client
+host-128-237-205-61:clientSide Cherry$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

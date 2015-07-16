@@ -1,0 +1,66 @@
+Last login: Tue May  1 19:53:13 on console
+host-128-237-205-61:~ Cherry$ cd serverSide
+host-128-237-205-61:serverSide Cherry$ keytool -genkey -alias mjm -keyalg RSA -keystore mjmkeystore
+Enter keystore password:  
+Re-enter new password: 
+What is your first and last name?
+  [Unknown]:  Fan Chen
+What is the name of your organizational unit?
+  [Unknown]:  Heinz College
+What is the name of your organization?
+  [Unknown]:  CMU
+What is the name of your City or Locality?
+  [Unknown]:  Pittsburgh
+What is the name of your State or Province?
+  [Unknown]:  PA
+What is the two-letter country code for this unit?
+  [Unknown]:  US
+Is CN=Fan Chen, OU=Heinz College, O=CMU, L=Pittsburgh, ST=PA, C=US correct?
+  [no]:  yes
+
+Enter key password for <mjm>
+	(RETURN if same as keystore password):  
+Re-enter new password: 
+host-128-237-205-61:serverSide Cherry$ keytool -export -alias mjm -keystore mjmkeystore -file mjm.cer
+Enter keystore password:  
+Certificate stored in file <mjm.cer>
+host-128-237-205-61:serverSide Cherry$ mv mjm.cer ../clientSide/
+host-128-237-205-61:serverSide Cherry$ ls
+mjmkeystore
+host-128-237-205-61:serverSide Cherry$ cd ..
+host-128-237-205-61:~ Cherry$ ls
+Applications		Music			clientSide
+CoolRSSJobApp		NetBeansProjects	db.zargo
+Desktop			Pictures		db.zargo~
+Documents		Project4Task1		junit4.10
+Downloads		Project4Task2		ooad_proj3.zargo
+Dropbox			Project4Task3		ooad_proj3.zargo~
+Library			Public			rmiLab
+Movies			Sites			serverSide
+host-128-237-205-61:~ Cherry$ cd clientSide
+host-128-237-205-61:clientSide Cherry$ ls
+mjm.cer
+host-128-237-205-61:clientSide Cherry$ keytool -import -alias mjm -keystore mjm.truststore -file mjm.cer
+Enter keystore password:  
+Re-enter new password: 
+Owner: CN=Fan Chen, OU=Heinz College, O=CMU, L=Pittsburgh, ST=PA, C=US
+Issuer: CN=Fan Chen, OU=Heinz College, O=CMU, L=Pittsburgh, ST=PA, C=US
+Serial number: 4fa17576
+Valid from: Wed May 02 13:57:10 EDT 2012 until: Tue Jul 31 13:57:10 EDT 2012
+Certificate fingerprints:
+	 MD5:  70:88:D0:10:26:13:A1:38:18:92:5F:CC:56:8C:35:DB
+	 SHA1: 54:3E:89:A9:2C:17:E3:5E:77:F1:52:02:FF:CB:3D:B3:C2:74:9B:83
+	 Signature algorithm name: SHA1withRSA
+	 Version: 3
+Trust this certificate? [no]:  yes
+Certificate was added to keystore
+host-128-237-205-61:clientSide Cherry$ cd ..
+host-128-237-205-61:~ Cherry$ cd serverSide
+host-128-237-205-61:serverSide Cherry$ javac *.java
+host-128-237-205-61:serverSide Cherry$ ls
+Server.class	Server.java	mjmkeystore
+host-128-237-205-61:serverSide Cherry$ java Server
+Accepting secure connections
+Got connection
+Got message Hello server
+host-128-237-205-61:serverSide Cherry$ 
