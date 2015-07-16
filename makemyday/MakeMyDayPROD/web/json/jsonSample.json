@@ -1,0 +1,63 @@
+{
+  "planlist" : [ [ [ "fchen.Event", {
+    "address" : "",
+    "category" : "Fitness",
+    "catWeight" : 3,
+    "eventName" : "Bubble Lounge",
+    "startTime" : 1341720000000,
+    "endTime" : 1341730800000,
+    "rsvpnum" : 42,
+    "eventUrl" : "http://www.meetup.com/AsianMeetups/events/70663422/",
+    "photoUrl" : "http://photos1.meetupstatic.com/photos/event/f/b/f/global_43996031.jpeg",
+    "startTimeStr" : "Sat Jul 07 21:00:00 PDT 2012",
+    "endTimeStr" : "Sun Jul 08 00:00:00 PDT 2012"
+  } ], [ "fchen.Event", {
+    "address" : "38.188748,-122.953835,San Francisco",
+    "category" : "hiking",
+    "catWeight" : 1,
+    "eventName" : "Tomales Point - Point Reyes",
+    "startTime" : 1341684000000,
+    "endTime" : 1341694800000,
+    "rsvpnum" : 54,
+    "eventUrl" : "http://www.meetup.com/hiking-594/events/69731542/",
+    "photoUrl" : "http://photos1.meetupstatic.com/photos/event/f/9/8/global_112539992.jpeg",
+    "startTimeStr" : "Sat Jul 07 11:00:00 PDT 2012",
+    "endTimeStr" : "Sat Jul 07 14:00:00 PDT 2012"
+  } ] ], [ [ "fchen.Event", {
+    "address" : "38.188748,-122.953835,San Francisco",
+    "category" : "hiking",
+    "catWeight" : 1,
+    "eventName" : "Tomales Point - Point Reyes",
+    "startTime" : 1341684000000,
+    "endTime" : 1341694800000,
+    "rsvpnum" : 54,
+    "eventUrl" : "http://www.meetup.com/hiking-594/events/69731542/",
+    "photoUrl" : "http://photos1.meetupstatic.com/photos/event/f/9/8/global_112539992.jpeg",
+    "startTimeStr" : "Sat Jul 07 11:00:00 PDT 2012",
+    "endTimeStr" : "Sat Jul 07 14:00:00 PDT 2012"
+  } ], [ "fchen.Event", {
+    "address" : "2995 Junipero Serra Blvd,Daly City",
+    "category" : "Fitness",
+    "catWeight" : 3,
+    "eventName" : "Pacifica Archery in Daly City..........",
+    "startTime" : 1341703800000,
+    "endTime" : 1341714600000,
+    "rsvpnum" : 10,
+    "eventUrl" : "http://www.meetup.com/AsianMeetups/events/68846842/",
+    "photoUrl" : "http://photos1.meetupstatic.com/photos/event/f/b/f/global_43996031.jpeg",
+    "startTimeStr" : "Sat Jul 07 16:30:00 PDT 2012",
+    "endTimeStr" : "Sat Jul 07 19:30:00 PDT 2012"
+  } ], [ "fchen.Event", {
+    "address" : "324 Castro St.,Mountain View",
+    "category" : "spirituality",
+    "catWeight" : 2,
+    "eventName" : "Exit Laughing",
+    "startTime" : 1341714600000,
+    "endTime" : 1341725400000,
+    "rsvpnum" : 1,
+    "eventUrl" : "http://www.meetup.com/East-West-Talks/events/70714192/",
+    "photoUrl" : "http://photos1.meetupstatic.com/photos/event/1/1/6/d/global_30166461.jpeg",
+    "startTimeStr" : "Sat Jul 07 19:30:00 PDT 2012",
+    "endTimeStr" : "Sat Jul 07 22:30:00 PDT 2012"
+  } ] ] ]
+}

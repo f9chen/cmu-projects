@@ -1,0 +1,27 @@
+{
+  "planlist" : [ [ [ "event", {
+    "address" : "20990 W Homestead Rd,Cupertino",
+    "category" : "Fitness",
+    "startTime" : 1341891900000,
+    "endTime" : 1341902700000,
+    "eventName" : "Represent your baseball colors for Monday Night Bowling at Homestead Lanes",
+    "catWeight" : 3,
+    "rsvpnum" : 3,
+    "eventUrl" : "http://www.meetup.com/South-Bay-Indoor-Outdoor-Activities-Group/events/70314372/",
+    "photoUrl" : "http://photos1.meetupstatic.com/photos/event/d/d/2/global_16581538.jpeg",
+    "startTimeStr" : "Mon Jul 09 20:45:00 PDT 2012",
+    "endTimeStr" : "Mon Jul 09 23:45:00 PDT 2012"
+  } ] ], [ [ "event", {
+    "address" : "20990 W Homestead Rd,Cupertino",
+    "category" : "Fitness",
+    "startTime" : 1341891900000,
+    "endTime" : 1341902700000,
+    "eventName" : "Represent your baseball colors for Monday Night Bowling at Homestead Lanes",
+    "catWeight" : 3,
+    "rsvpnum" : 3,
+    "eventUrl" : "http://www.meetup.com/South-Bay-Indoor-Outdoor-Activities-Group/events/70314372/",
+    "photoUrl" : "http://photos1.meetupstatic.com/photos/event/d/d/2/global_16581538.jpeg",
+    "startTimeStr" : "Mon Jul 09 20:45:00 PDT 2012",
+    "endTimeStr" : "Mon Jul 09 23:45:00 PDT 2012"
+  } ] ] ]
+}

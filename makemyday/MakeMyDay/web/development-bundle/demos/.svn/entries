@@ -1,0 +1,168 @@
+10
+
+dir
+72
+file:///Users/fchen/Dropbox/makemyday/SVNrepo/MakeMyDay/web/development-bundle/demos
+file:///Users/fchen/Dropbox/makemyday/SVNrepo
+
+
+
+2012-07-01T01:39:56.554000Z
+25
+bhsridha
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+8e446154-df9e-4f9b-9ecf-8f9d148699f1
+
+accordion
+dir
+
+addClass
+dir
+
+animate
+dir
+
+autocomplete
+dir
+
+button
+dir
+
+datepicker
+dir
+
+demos.css
+file
+
+
+
+
+2012-07-01T06:06:51.000000Z
+2e2ec04700af4ac5681a956cfe405c47
+2012-07-01T01:39:56.554000Z
+25
+bhsridha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14338
+
+dialog
+dir
+
+draggable
+dir
+
+droppable
+dir
+
+effect
+dir
+
+hide
+dir
+
+images
+dir
+
+index.html
+file
+
+
+
+
+2012-07-01T06:06:51.000000Z
+e2ad228d92ade2c49235130180d9e90c
+2012-07-01T01:39:56.554000Z
+25
+bhsridha
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14617
+
+position
+dir
+
+progressbar
+dir
+
+removeClass
+dir
+
+resizable
+dir
+
+selectable
+dir
+
+show
+dir
+
+slider
+dir
+
+sortable
+dir
+
+switchClass
+dir
+
+tabs
+dir
+
+toggle
+dir
+
+toggleClass
+dir
+
