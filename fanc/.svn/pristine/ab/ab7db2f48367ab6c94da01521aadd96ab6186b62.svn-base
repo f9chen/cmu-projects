@@ -1,0 +1,19 @@
+Welcome:	10/10
+Very nicely done! The Sign In button should link to the Your Courses page, but I'm not taking off points because I can get to the Your Courses page using the nav bar at the top.
+
+Registration:	10/10
+Good.
+
+Create course:	10/10
+Good.
+
+Your courses:	20/20
+Good.
+
+Browse courses:	20/20
+Good.
+
+Overall:	69/70
+Good job! It's clear you spent a lot of time getting your site to look nice. However, there were a lot of problems with your HTML (-1). For instance, you use a nonstandard IMAGE tag instead of the standard IMG tag. The only reason that worked is because Firefox is a lenient Web browser.
+
+Karl

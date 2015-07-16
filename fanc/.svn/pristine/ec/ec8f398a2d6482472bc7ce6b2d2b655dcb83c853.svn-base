@@ -1,0 +1,15 @@
+package dao;
+
+/**
+ * Product Version: NetBeans IDE 7.1 (Build 201112071828)
+ * @author Fan Chen
+ */
+public class MyDAOException extends Exception {
+  public MyDAOException(String message)  { super(message); }
+
+  public MyDAOException(Throwable cause) { super(cause);   }
+
+  public MyDAOException(String message, Throwable cause) {
+    super(message,cause);
+  }
+}

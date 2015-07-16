@@ -1,0 +1,76 @@
+<!-- @author fanc -->
+<!-- browse-course.html -->
+<html>
+  <head>
+    <title>browse-courses</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="welcome.html">Instacram</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="your-courses.html">Your courses</a></li>
+              <li class="active"><a href="browse-courses.html">Browse courses</a></li>
+              <li><a href="create-a-course.html">Create a course</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="hero-unit">
+            <div class="row">
+              <div class="span4">
+
+                <h3>All courses</h3>
+                <hr>
+                <p><a href="browse-courses.html"><strong>Webapps</strong></a><br>
+                <a href="browse-courses.html">OS</a><br>
+                <a href="browse-courses.html">Shakespeare 101</a><br>
+                <a href="browse-courses.html">251</a><br>
+                <a href="browse-courses.html">Type theory and gender</a><br>
+                </p>
+              </ul>
+            </div><!--/span-->        
+            <div class="span7">
+              <p>Webapps, created by <a href="#">Karl Hellstern</a></p>
+              <a class="btn">Join Webapps &raquo;</a></p>
+              <hr>
+              <p>Note by <a href="#">Chailie Garrod:</a><br>
+              "Woad, it's a servlet!"<br>
+              @Aug 28, 9:59p.m.</p>
+              <p>Note by <a href="#">Karl Hellstern:</a><br>
+              "&#60;3"<br>
+              @Aug 28, 6:00p.m.</p>
+            </div><!--/span-->
+          </div><!--/row--> 
+        </div><!--/row-->
+        <footer> <p>
+        &copy; 2012 - <b>Fan Chen</b>, Carnegie Mellon University
+        </p></footer>
+      </div><!--/.fluid-container-->
+    </body>
+
+
+  </html>

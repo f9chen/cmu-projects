@@ -1,0 +1,200 @@
+package dao;
+
+import databeans.*;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
+/**
+ * Product Version: NetBeans IDE 7.1 (Build 201112071828)
+ *
+ * @author Fan Chen
+ */
+public class CourseDAOSQLImpl implements CourseDAO {
+
+    private List<Connection> connectionPool = new ArrayList<Connection>();
+    private String jdbcDriver;
+    private String jdbcURL;
+
+    public CourseDAOSQLImpl(String jdbcDriver, String jdbcURL) {
+        this.jdbcDriver = jdbcDriver;
+        this.jdbcURL = jdbcURL;
+
+        try {
+            createTable();
+        } catch (MyDAOException e) {
+            // Ignore ... if thrown assume it's because table already exists
+            // If it's some other problem we'll fail later on
+        }
+    }
+
+    @Override
+    public synchronized void addNote(String courseSelected, Note note, NoteDAO noteDAO) throws MyDAOException {
+        noteDAO.createNote(note.getContent(), courseSelected, note.getCreatedBy(), note.getTimestamp());
+    }
+
+    @Override
+    public Course createCourse(String courseName, String createdBy) throws MyDAOException {
+
+        Connection con = null;
+        try {
+            con = getConnection();
+            PreparedStatement pstmt = con.prepareStatement("INSERT INTO fanc_course (courseName, createdBy) VALUES (?,?)");
+            Course newCourse = new Course(courseName, createdBy);
+            pstmt.setString(1, courseName);
+            pstmt.setString(2, createdBy);
+
+            int count = pstmt.executeUpdate();
+            if (count != 1) {
+                throw new SQLException("Insert updated " + count + " rows");
+            }
+
+            pstmt.close();
+            releaseConnection(con);
+            return newCourse;
+
+        } catch (Exception e) {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e2) { /* ignore */ }
+            throw new MyDAOException(e);
+        }
+
+    }
+
+    @Override
+    public synchronized String getNumCourse() throws MyDAOException {
+        return String.valueOf(getAllCourses().size());
+    }
+
+    @Override
+    public synchronized List<String> getAllCourses() throws MyDAOException {
+        try {
+            Connection con = getConnection();
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select courseName from fanc_course");
+            List<String> list = new ArrayList<String>();
+            while (rs.next()) {
+                list.add(rs.getString("courseName"));
+            }
+            rs.close();
+            stmt.close();
+            releaseConnection(con);
+            return list;
+        } catch (SQLException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    @Override
+    public synchronized String getAllCoursesToHTML(String email) throws MyDAOException {
+        String result = "<ul class=\"nav nav-list\">";
+        for (String crs : getAllCourses()) {
+            result += "<li><a href=\"BrowseCourses?courseSelected=" + crs + "&courseCreatedBy=" + lookup(crs).getCreatedBy() + "&email=" + email + "\">" + crs + "</a></li>";
+        }
+        result += "</ul>";
+        return result;
+    }
+
+    public synchronized List<Note> getSelectedCourseNotesList(String courseSelected) throws MyDAOException {
+        try {
+            Connection con = getConnection();
+            PreparedStatement pstmt = con.prepareStatement("select content, createdBy, timestamp from fanc_note where courseName=? order by timestamp desc");
+            pstmt.setString(1, courseSelected);
+            ResultSet rs = pstmt.executeQuery();
+            List<Note> list = new ArrayList<Note>();
+            while (rs.next()) {
+                list.add(new Note(rs.getString("content"), courseSelected, rs.getString("createdBy"), rs.getString("timestamp")));
+            }
+            rs.close();
+            pstmt.close();
+            releaseConnection(con);
+            return list;
+        } catch (SQLException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    @Override
+    public synchronized String getSelectedCourseNoteToHTML(String courseSelected) throws MyDAOException {
+        String result = "";
+        result += "<p><a href=\"#\">" + courseSelected + "</a><br></p>";
+        for (Note note : getSelectedCourseNotesList(courseSelected)) {
+            if (note.getCourseName().equals(courseSelected)) {
+                result += "\"" + note.getContent() + "\"<br>by <a href=\"#\">" + note.getCreatedBy() + "</a>@ " + note.getTimestamp() + "<br><br>";
+            }
+        }
+        return result;
+    }
+
+    private void createTable() throws MyDAOException {
+        Connection con = null;
+        try {
+            con = getConnection();
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate("CREATE TABLE fanc_course (courseName VARCHAR(255) NOT NULL,createdBy VARCHAR(255) NOT NULL, PRIMARY KEY(courseName))");
+            stmt.close();
+            releaseConnection(con);
+        } catch (SQLException e) {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e2) { /* ignore */ }
+            throw new MyDAOException(e);
+        }
+    }
+
+    private synchronized Connection getConnection() throws MyDAOException {
+        if (connectionPool.size() > 0) {
+            return connectionPool.remove(connectionPool.size() - 1);
+        }
+        try {
+            Class.forName(jdbcDriver);
+        } catch (ClassNotFoundException e) {
+            throw new MyDAOException(e);
+        }
+
+        try {
+            return DriverManager.getConnection(jdbcURL);
+        } catch (SQLException e) {
+            throw new MyDAOException(e);
+        }
+    }
+
+    private synchronized void releaseConnection(Connection con) {
+        connectionPool.add(con);
+    }
+
+    public synchronized Course lookup(String courseName) throws MyDAOException {
+        Connection con = null;
+        try {
+            con = getConnection();
+            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM fanc_course WHERE courseName = ?");
+            pstmt.setString(1, courseName);
+            ResultSet rs = pstmt.executeQuery();
+            Course course;
+            if (!rs.next()) {
+                course = null;
+            } else {
+                course = new Course(rs.getString("courseName"), rs.getString("createdBy"));
+            }
+
+            rs.close();
+            pstmt.close();
+            releaseConnection(con);
+            return course;
+
+        } catch (Exception e) {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException e2) { /* ignore */ }
+            throw new MyDAOException(e);
+        }
+    }
+}

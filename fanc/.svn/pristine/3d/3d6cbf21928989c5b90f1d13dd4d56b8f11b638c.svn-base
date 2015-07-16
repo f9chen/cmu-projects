@@ -1,0 +1,115 @@
+/*
+ * @author fanc
+ * Welcome.java
+ */
+package servlet;
+
+import dao.*;
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class Welcome extends HttpServlet {
+
+    static UserDAO userDAO;
+    static CourseDAO courseDAO;
+    static NoteDAO noteDAO;
+    static EnrollmentDAO enrollmentDAO;
+    static SearchDAO searchDAO;
+
+    @Override
+    public void init() {
+        //initMemoryImpl();
+        //initSQLImpl();
+        initFactoryImpl();
+    }
+
+//    public void initMemoryImpl() {
+//        userDAO = UserDAOMemoryImpl.INSTANCE;
+//        courseDAO = CourseDAOMemoryImpl.INSTANCE;
+//
+//    }
+    public void initSQLImpl() {
+        String jdbcDriverName = getInitParameter("jdbcDriverName");
+        String jdbcURL = getInitParameter("jdbcURL");
+
+        userDAO = new UserDAOSQLImpl(jdbcDriverName, jdbcURL);
+        courseDAO = new CourseDAOSQLImpl(jdbcDriverName, jdbcURL);
+        noteDAO = new NoteDAOSQLImpl(jdbcDriverName, jdbcURL);
+        enrollmentDAO = new EnrollmentDAOSQLImpl(jdbcDriverName, jdbcURL);
+        searchDAO = new SearchDAOSQLImpl(jdbcDriverName, jdbcURL);
+
+    }
+
+    public void initFactoryImpl() {
+        String jdbcDriverName = getInitParameter("jdbcDriverName");
+        String jdbcURL = getInitParameter("jdbcURL");
+        try {
+            userDAO = new UserDAOFactoryImpl(jdbcDriverName, jdbcURL);
+            courseDAO = new CourseDAOFactoryImpl(jdbcDriverName, jdbcURL);
+            noteDAO = new NoteDAOFactoryImpl(jdbcDriverName, jdbcURL);
+            enrollmentDAO = new EnrollmentDAOFactoryImpl(jdbcDriverName, jdbcURL);
+            searchDAO = new SearchDAOSQLImpl(jdbcDriverName, jdbcURL);
+        } catch (MyDAOException e) {
+        }
+
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        RequestDispatcher view = null;
+        HttpSession session = request.getSession(true);
+        if (session.getAttribute("login") == null) {
+            session.setAttribute("login", false);
+        }
+        String email = request.getParameter("email");
+        String pwd = request.getParameter("pwd");
+        session.setAttribute("email", email);
+
+        try {
+            request.setAttribute("numCourses", courseDAO.getNumCourse());
+            if(email==null){
+                request.setAttribute("numCourses", courseDAO.getNumCourse());
+                    view = request.getRequestDispatcher("welcome.jsp");
+                    view.forward(request, response);
+                    return;
+            }
+            if (!(Boolean) session.getAttribute("login")) {
+                if (userDAO.lookup(email) != null) {
+                    if (userDAO.lookup(email).getPassword().equals(pwd)) {
+                        session.setAttribute("login", true);
+
+
+                        request.setAttribute("email", email);
+                        request.setAttribute("courseListSelect", userDAO.getMyCourseListToSelectHTML(email));
+                        request.setAttribute("notes", userDAO.getMyCourseNotesToHTML(email, courseDAO));
+                        request.setAttribute("courseList", userDAO.getMyCourseListToHTML(email));
+                        view = request.getRequestDispatcher("your-courses.jsp");
+                        view.forward(request, response);
+                    } else {
+                        request.setAttribute("message", "login error!");
+                        view = request.getRequestDispatcher("welcome.jsp");
+                        view.forward(request, response);
+                    }
+                } else {
+                    request.setAttribute("numCourses", courseDAO.getNumCourse());
+                    view = request.getRequestDispatcher("welcome.jsp");
+                    view.forward(request, response);
+                }
+            } else {
+                request.setAttribute("numCourses", courseDAO.getNumCourse());
+                request.setAttribute("email", email);
+                request.setAttribute("message", "already logged in!");
+                view = request.getRequestDispatcher("welcome.jsp");
+                view.forward(request, response);
+            }
+        } catch (MyDAOException e) {
+        }
+    }
+}

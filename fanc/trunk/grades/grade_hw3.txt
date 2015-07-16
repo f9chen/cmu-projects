@@ -1,0 +1,18 @@
+Your score: 82 / 100
+
+1. No of courses not updated in welcome pages
+2. Able to join same course (creates an entry in your enrollment table). Taking no points off, but fix this bug.
+3. Cross site scripting is not handled. : -5
+for example, scripts like <script>alert("touch me baby!");</script>
+<p>new</p><p>york</p> are able to make a mess on the website.
+4. Also, when you make a war file, please take into consideration that it SHOULD be deployable. 
+I was not able to deploy it because of one level of directory that your submission had. I had to make war again.
+For next hw, points may be taken off.
+5. Duplicate userwebsite just hangs due to unhandled MyDAOException: -5
+Also duplicate course creation has not been handled. So that means you did not think about concurrency. -3
+6. Development process/ svn usage: NO (-5)
+
+Grader:
+Kishy Kumar
+Please contact me (kishyk@andrew.cmu.edu) if any problems with grading. 
+

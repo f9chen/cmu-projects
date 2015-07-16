@@ -1,0 +1,95 @@
+/*
+ * @author fanc
+ * User.java
+ */
+package instacram;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class User {
+
+    private String fname;
+    private String lname;
+    private String email;
+    private String password;
+    private boolean loggedin = false;
+    private Set<String> myCourseList = new HashSet<String>();
+
+    public User(String fname, String lname, String email, String password) {
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+        this.password = password;
+    }
+
+    public void addCourse(String courseName) {
+        getMyCourseList().add(courseName);
+    }
+
+    public String getMyCourseListToHTML() {
+        String result = "";
+        for (String crs : myCourseList) {
+            result += crs + "<br>";
+        }
+        return result;
+    }
+
+    public String getMyCourseListToSelectHTML() {
+        String result = "";
+        result += "<select class=\"dropdown\" name=\"courseSelected\">";
+        for (String crs : myCourseList) {
+            result += "<option>" + crs + "</option>";
+        }
+        result += "</select>";
+        return result;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isLoggedin() {
+        return loggedin;
+    }
+
+    public void setLoggedin(boolean loggedin) {
+        this.loggedin = loggedin;
+    }
+
+    public Set<String> getMyCourseList() {
+        return myCourseList;
+    }
+
+    public void setMyCourseList(Set<String> myCourseList) {
+        this.myCourseList = myCourseList;
+    }
+}

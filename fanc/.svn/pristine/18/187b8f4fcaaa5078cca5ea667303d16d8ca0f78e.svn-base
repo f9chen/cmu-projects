@@ -1,0 +1,58 @@
+<!-- @author fanc -->
+<!-- create-a-course.html -->
+<html>
+  <head>
+    <title>create-a-course</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="welcome.html">Instacram</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="your-courses.html">Your courses</a></li>
+              <li><a href="browse-courses.html">Browse courses</a></li>
+              <li class="active"><a href="create-a-course.html">Create a course</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="hero-unit">
+            <form action="create-a-course.html" method=GET>
+              <h3>Create a new course
+              </h3>
+              <p>Course name</p>
+              <input class="span8" type='text'><br>
+              <p> <a class="btn">Create course &raquo;</a></p>
+            </form>
+          </div><!--/row--> 
+        </div><!--/row-->
+        <footer> <p>
+        &copy; 2012 - <b>Fan Chen</b>, Carnegie Mellon University
+        </p></footer>
+      </div><!--/.fluid-container-->
+    </body>
+  </html>
+

@@ -1,0 +1,84 @@
+<!-- @author fanc -->
+<!-- your-course.html -->
+<html>
+  <head>
+    <title>your-courses</title>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="welcome.html">Instacram</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="your-courses.html">Your courses</a></li>
+              <li><a href="browse-courses.html">Browse courses</a></li>
+              <li><a href="create-a-course.html">Create a course</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="hero-unit">
+            <div class="row">
+              <div class="span4">
+
+                <h3>Your courses!</h3>
+                <hr>
+                <p>All</p>
+                <p>
+                <a href="browse-courses.html">Webapps</a><br>
+                <a href="browse-courses.html">OS</a><br>
+                <a href="browse-courses.html">Shakespeare 101</a>
+                </p>
+              </ul>
+            </div><!--/span-->        
+            <div class="span7">
+              <p>Enter a course note for
+              <select class="dropdown">
+                <option>Webapps</option>
+                <option>OS</option>
+                <option>Shakespeare 101</option>
+              </select>
+
+              <input class="span11" type='text'><br>
+              <a class="btn">Post note &raquo;</a></p>
+              <hr>
+              <h4>All course notes</h4>
+              <p><a href="#">Webapps</a>, by <a href="#">Charlie Garrod</a><br>
+              "Woah, it's a servlet!"<br>
+              @Aug 28,9:59pm</p>
+              <p><a href="#">OS</a>, by <a href="#">Karl Hellstern</a><br>
+              "Urgh"<br>
+              @Aug28, 9:30pm</p>
+              <p><a href="#">Shakespeare 101</a>, <a href="#">by Greg Kesden</a><br>
+              "Whether 'tis nobler in the mind to suffer..."<br>
+              @Aug 28,9:20 pm</p>
+            </div><!--/span-->
+          </div><!--/row--> 
+        </div><!--/row-->
+        <footer> <p>
+        &copy; 2012 - <b>Fan Chen</b>, Carnegie Mellon University
+        </p></footer>
+      </div><!--/.fluid-container-->
+    </body>
+  </html>

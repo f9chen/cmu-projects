@@ -1,0 +1,11 @@
+Grade: 60/100
+
+Comments:
+
+  (-0) Graded revision 22.
+
+  (-10) Navigating to the CreateCourse page causes a NullPointerException.
+
+  (-30) No use of MVC architecture. A separate servlet is used for each user function.
+
+Graded by Karl.

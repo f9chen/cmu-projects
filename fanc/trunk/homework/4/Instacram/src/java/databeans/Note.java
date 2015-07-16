@@ -1,0 +1,56 @@
+package databeans;
+
+/**
+ * Product Version: NetBeans IDE 7.1 (Build 201112071828)
+ *
+ * @author Fan Chen
+ */
+public class Note {
+
+    private String content;
+    private String courseName;
+    private String createdBy;
+    private String timestamp;
+
+    public Note() {
+    }
+
+    public Note(String content, String courseName, String createdBy, String timestamp) {
+        this.content = content;
+        this.courseName = courseName;
+        this.createdBy = createdBy;
+        this.timestamp = timestamp;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+}

@@ -1,0 +1,74 @@
+//package dao;
+//
+//import instacram.User;
+//import java.lang.String;
+//import java.util.HashMap;
+//import java.util.Map;
+//import java.util.Set;
+//
+///**
+// * Product Version: NetBeans IDE 7.1 (Build 201112071828)
+// *
+// * @author Fan Chen
+// */
+//public class UserDAOMemoryImpl implements UserDAO {
+//
+//  public static final UserDAOMemoryImpl INSTANCE = new UserDAOMemoryImpl();
+//  private Map<String, User> userMap = new HashMap<String, User>();
+//  CourseDAO courseDAO = CourseDAOMemoryImpl.INSTANCE;
+//
+//  public User createUser(String fname, String lname, String email, String password) throws MyDAOException {
+//    if (userMap.get(email) != null) {
+//      throw new MyDAOException("A user with this name already exists: " + email);
+//    }
+//    User newUser = new User(fname, lname, email, password);
+//    userMap.put(email, newUser);
+//    return copy(newUser);
+//  }
+//  /*
+//   * used for log in?
+//   */
+//
+//  public User lookup(String email) throws MyDAOException {
+//    return copy(userMap.get(email));
+//  }
+//
+//  public void setPassword(String email, String password) throws MyDAOException {
+//  }
+//
+//  public boolean addCourse(String email, String courseName, EnrollmentDAO enrollmentDAO) {
+//    userMap.get(email).addCourse(courseName);
+//    return true;
+//  }
+//
+//  public Set<String> getMyCourse (String email) throws MyDAOException{
+//    return userMap.get(email).getMyCourseList();
+//  }
+//
+//  public String getMyCourseListToHTML(String email) {
+//    return userMap.get(email).getMyCourseListToHTML();
+//  }
+//
+//  public String getMyCourseListToSelectHTML(String email) {
+//    return userMap.get(email).getMyCourseListToSelectHTML();
+//  }
+//
+//  @Override
+//    public String getMyCourseNotesToHTML(String email, CourseDAO courseDAO) throws MyDAOException{
+//      String result="";
+//      for(String courseName: getMyCourse(email)){
+//        result+="<p>"+courseDAO.getSelectedCourseNoteToHTML(courseName)+"</p>";
+//      }
+//      System.out.println(result);
+//      return result;    
+//
+//    }
+//
+//  private User copy(User original) {
+//    if (original == null) {
+//      return null;
+//    }
+//    User duplicate = new User(original.getLname(), original.getFname(), original.getEmail(), original.getPassword());
+//    return duplicate;
+//  }
+//}

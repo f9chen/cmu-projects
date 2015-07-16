@@ -1,0 +1,12 @@
+Graded by Woody Thompson (wrthomps). If you have any questions or want to dispute,
+please e-mail me directly at wrthomps@andrew.cmu.edu
+
+Grade: 70/70
+
+Comments:
+
+(-3) (REVISED: -0) Missing some source files. Your JSPs are fine, but your other classes' source
+(SystemController, User, etc.) are missing.
+
+REVISED 1:28AM 09/27: As per your e-mail and seeing that you submitted the source files
+so quickly, I'm removing the no-source penalty.

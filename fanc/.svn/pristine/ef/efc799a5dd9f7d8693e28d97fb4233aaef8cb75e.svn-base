@@ -1,0 +1,82 @@
+<!-- @author fanc -->
+<!-- welcome.jsp -->
+<% String email=(String) request.getAttribute("email"); 
+%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>welcome</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+            .sidebar-nav {
+                padding: 9px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="Welcome">Instacram</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="YourCourses">Your courses</a></li>
+                            <li><a href="BrowseCourses">Browse courses</a></li>
+                            <li><a href="CreateCourse">Create a course</a></li>
+                            <li><a href="SearchNote">Search Note</a></li>
+                            <li><a href="Logoff">Log off!</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div>
+                        <% String message=(String) request.getAttribute("message"); 
+            if (message==null) message="";%>
+                        <%=message%>
+                    </div>
+                    <div class="hero-unit">
+                        <div class="row">
+                            <div class="span5">
+                                <img src="pic/welcome.jpg" class="img-polaroid">
+                                <% String numCourses=(String) request.getAttribute("numCourses"); 
+            if (numCourses==null) numCourses="0";%>
+                                <center><p><%=numCourses%> courses created so far!</p></center>
+                            </div><!--/span-->
+                            <div class="span1">
+                            </div>
+                            <div class="span6">
+                                <h2>Instacram</h2>
+                                <p>Fast, brilliant note-sharing<br>
+                                <form action="Welcome" method='GET'>
+                                    <input class="span6" type='text' name='email' placeholder="Email"><br>
+                                    <input class="span6" type='password' name='pwd' placeholder="Password"><br>
+                                    <p><input class="btn" type="submit" value="Sign in &raquo;"</input></p>
+                                    <p> Don't have an Instacram account? <a href="registration.jsp">Sign up now!</a></p>
+                                </form>
+                            </div><!--/span-->
+                        </div><!--/row--> 
+                    </div><!--/row-->
+                </div><!--/row--> 
+            </div><!--/row-->
+            <footer> <p>
+                    &copy; 2012 - <b>Fan Chen</b>, Carnegie Mellon University
+                </p></footer>
+        </div><!--/.fluid-container-->
+    </body>
+</html>

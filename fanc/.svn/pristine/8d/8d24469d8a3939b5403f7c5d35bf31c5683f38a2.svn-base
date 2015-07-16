@@ -1,0 +1,13 @@
+package dao;
+
+import instacram.Enrollment;
+
+/**
+ * Product Version: NetBeans IDE 7.1 (Build 201112071828)
+ * @author Fan Chen
+ */
+public interface EnrollmentDAO {
+
+  public Enrollment createEnrollment(String email, String courseName) throws MyDAOException;
+
+}
